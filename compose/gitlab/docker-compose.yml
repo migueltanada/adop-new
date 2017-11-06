@@ -1,8 +1,8 @@
 jenkins:
-  image: bzon/adop-jenkins-gitlab-integration:latest
+  image: test:1 
   environment:
     ADOP_LDAP_ENABLED: "true"
-    ADOP_GITLAB_ENABLED: "true" - check
+    ADOP_GITLAB_ENABLED: "true"
     GITLAB_HOST_NAME: "gitlab"
     GITLAB_HTTP_URL: "http://gitlab/gitlab"
     GITLAB_ADMIN_USER: "root"
@@ -10,15 +10,15 @@ jenkins:
     ADOP_GERRIT_ENABLED: "false"
     ADOP_SONAR_ENABLED: "false"
     SONAR_SERVER_URL: "http://sonar:9000"
-    JENKINS_OPTS: "--prefix=/ -Djenkins.install.runSetupWizard=false"
-    JAVA_OPTS: "-Dpermissive-script-security.enabled=false"
+    JENKINS_OPTS: "--prefix=/jenkins -Djenkins.install.runSetupWizard=false"
+    JAVA_OPTS: "-Dpermissive-script-security.enabled=no_security"
     LDAP_ROOTDN: "$LDAP_FULL_DOMAIN"
     ADOP_SMTP_ENABLED: "false"
     LDAP_MANAGER_DN: "cn=admin,$LDAP_FULL_DOMAIN"
     LDAP_MANAGER_PASSWORD: ${LDAP_PWD}
     LDAP_USER_SEARCH_BASE: "ou=people"
     LDAP_GROUP_SEARCH_BASE: "ou=groups"
-    SUB_DOMAIN: "{$SUB_DOMAIN}
+    SUB_DOMAIN: "{$SUB_DOMAIN}"
     INITIAL_ADMIN_USER: "${INITIAL_ADMIN_USER}"
     INITIAL_ADMIN_PASSWORD: "${INITIAL_ADMIN_PASSWORD_PLAIN}"
     GIT_SERVER_HOST_NAME: "gitlab"
