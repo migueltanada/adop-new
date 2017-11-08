@@ -29,7 +29,7 @@ jenkins:
     USE_SCRIPT_SECURITY: "false"
     
 proxy:
-  image: accenturepdc/adop-nginx:0.1.0
+  image: migueltanada/adop-nginx:0.1
   environment:
     GIT_REPO: "gitlab"
 
