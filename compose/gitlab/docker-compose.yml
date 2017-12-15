@@ -1,5 +1,5 @@
 jenkins:
-  image: test:1 
+  image: bzon/adop-jenkins-gitlab-integration:latest
   environment:
     ADOP_LDAP_ENABLED: "true"
     ADOP_GITLAB_ENABLED: "true"
